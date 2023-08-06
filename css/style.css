@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #6495ed;
+}
+
+main {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  min-width: 600px;
+  min-height: 600px;
+  background-color: #f0f8ff;
+  border-radius: 600px;
+  /*podemos colocar a metade da largura ou da altura que é 600 que tambem haverá um circulo perfeito*/
+  border: 15px groove #333;
+  position: relative;
+  /*depois que fizer a parte do circulo voltaremos ao main para centralizar os numeros pois ficara mais facil de visualizar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number {
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 6px;
+  /* transform rotate serve para rotacionar uma div  */
+}
+
+.number-1 {
+  transform: rotate(30deg);
+}
+
+/*A ideia logica para saber quanto graus de distancia um numero tem ficar um do outro */
+.number-2 {
+  /* sabemos que um circulo tem 360° e o relogio 12 numeros logo fazemos 360 Dividido por 12 que é =30*/
+  transform: rotate(60deg);
+  /*então aumnetamos de 30 e 30 a classe number 30,60,90,120 etc...*/
+}
+
+.number-3 {
+  transform: rotate(90deg);
+}
+
+.number-4 {
+  transform: rotate(120deg);
+}
+
+.number-5 {
+  transform: rotate(150deg);
+}
+
+.number-6 {
+  transform: rotate(180deg);
+}
+
+.number-7 {
+  transform: rotate(210deg);
+}
+
+.number-8 {
+  transform: rotate(240deg);
+}
+
+.number-9 {
+  transform: rotate(270deg);
+}
+
+.number-10 {
+  transform: rotate(300deg);
+}
+
+.number-11 {
+  transform: rotate(330deg);
+}
+
+.second-hand {
+  width: 5px;
+  height: 240px;
+  /*nesta hora os numeros do relogio ficam baguncçado por isso ele tera um position absolute */
+  background-color: #a52a2a;
+  position: absolute;
+  /*como fizemos no main, voltaremos no clock e add display:flex, align-itens:center e justfy-content center  */
+  border-radius: 5px;
+  transform: translate(0, -50%);
+  /*o Transform tranlate funciona como eixo tipo eixo X e eixo Y eixo X é para direita e esquerda  */
+  transform-origin: bottom center;
+  /*e o eixo Y para cima e para baixo, então deixaremos o eixo X 0 e o eixo Y com o valor 50, mais se colocarmo só 50 */
+  /*ele vai para baixo, então colocaremos -50% */
+}
+
+/*transform-origin faz com que o ponteiro gire porem ele girará fora do eixo então usaremos o bottom center que fará com que ele gire com a parte de baixo da div*/
+
+.minute-hand {
+    width: 8px;
+    height: 220px;
+    background-color: #333;
+    position: absolute;
+    border-radius: 5px;
+    transform: translate(0, -50%) ;
+    transform-origin: bottom center;
+}
+.hour-hand {
+    width: 13px;
+    height: 150px;
+    background-color: #333;
+    position: absolute;
+    border-radius: 13px;
+    transform: translate(0, -50%);
+    transform-origin: bottom center;
+}
+.center {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #a52a2a;
+    position: absolute;
+}
